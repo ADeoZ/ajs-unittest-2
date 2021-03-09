@@ -31,3 +31,19 @@ test('sort 4 players', () => {
   ];
   expect(sortPlayers(players)).toEqual(result);
 });
+
+test('sort not toBe', () => {
+  const players = [
+    { name: 'мечник', health: 10 },
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 50 },
+    { name: 'хил', health: 90 },
+  ];
+  const result = [
+    { name: 'маг', health: 100 },
+    { name: 'хил', health: 90 },
+    { name: 'лучник', health: 50 },
+    { name: 'мечник', health: 10 },
+  ];
+  expect(sortPlayers(players)).not.toBe(result);
+});
